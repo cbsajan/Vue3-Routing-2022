@@ -1,26 +1,25 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <app-header></app-header>
+  <div class="container">
+    <!-- <home-component></home-component> -->
+    <!-- <articles-main></articles-main> -->
+    <!-- <article-comp></article-comp> -->
+    <contact-component></contact-component>
+  </div>
+  <app-footer></app-footer>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+// import HomeComponent from './components/index';
+// import ArticlesMain from './components/Articles'
+// import ArticleComp from './components/Articles/article'
+import ContactComponent from './components/Contact/Index_Comp.vue'
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    // HomeComponent
+    // ArticlesMain
+    // ArticleComp
+    ContactComponent
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
