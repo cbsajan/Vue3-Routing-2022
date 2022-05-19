@@ -10,7 +10,7 @@ import Article from './components/Articles/Article_Comp.vue'
 import Contact from './components/Contact/Index_Comp.vue';
 import Home from './components/Index_comp.vue';
 import NotFound from './components/404_Error_Comp.vue'
-
+import Notify from './components/notify_Comp.vue';
 const app =  createApp(App);
 const theData = (route) => {
     console.log(route);
@@ -24,7 +24,10 @@ const routes = createRouter({
     routes:[
         { path:'/', component: Home },
         { path:'/articles', component: Articles },
-        { path:'/contact', component: Contact },
+        { path:'/contact', components: {
+            default: Contact,
+            notify: Notify
+        }, name:'contact'},
         { path:'/article/:articleId', component: Article, props:theData },
         { path:'/:notFound(.*)', component: NotFound }
     ],
