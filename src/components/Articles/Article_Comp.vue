@@ -49,3 +49,13 @@
     </div>
 
 </template>
+
+<script>
+export default {
+    created() {
+        // console.log(this.$router);
+        console.log(this.$route);
+        console.log(this.$route.params.articleId)
+    }
+}
+</script>

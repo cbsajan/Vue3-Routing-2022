@@ -5,6 +5,7 @@ import App from './App.vue'
 import Header from './components/header_footer/Header_Comp.vue';
 import Footer from './components/header_footer/Footer_Comp.vue';
 import Articles from './components/Articles/Index_Comp.vue'
+import Article from './components/Articles/Article_Comp.vue'
 
 import Contact from './components/Contact/Index_Comp.vue';
 import Home from './components/Index_comp.vue';
@@ -17,7 +18,8 @@ const routes = createRouter({
     routes:[
         { path:'/', component: Home },
         { path:'/articles', component: Articles },
-        { path:'/contact', component: Contact }
+        { path:'/contact', component: Contact },
+        {path:'/article/:articleId',component:Article}
     ],
     linkActiveClass:'active'
 });
