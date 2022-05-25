@@ -100,10 +100,15 @@ export default {
     created() {
         console.log(this.$route)
     },
-    beforeRouteEnter() {
-        const isAuth = true;
-        if (!isAuth) return '/login';
-        return true;
+    beforeRouteEnter(to) {
+        if (to.meta.authCheck) {
+
+
+            const isAuth = true;
+            if (!isAuth) return '/login';
+            return true;
+        }
+        return true
     },
     beforeRouteUpdate() {
         //////// 

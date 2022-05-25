@@ -52,6 +52,7 @@ const routes = createRouter({
         default: Contact,
         notify: Notify,
       },
+      meta: { authCheck: true },
       name: "contact",
     },
     { path: "/login", component: Login },
@@ -59,7 +60,12 @@ const routes = createRouter({
   ],
   linkActiveClass: "active",
 });
-
+routes.beforeEach((to, from, next) => {
+  if (to.meta.authCheck) {
+    /// do the auth check
+  }
+  return next();
+});
 // routes.beforeEach((to,from,next)=>{
 //     const isAuth = false;
 
