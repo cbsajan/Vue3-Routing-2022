@@ -51,7 +51,7 @@ export default {
     },
     methods: {
         loadArticleData(articleId) {
-            axios.get(`http://localhost:3004/articles/${articleId}`)
+            axios.get(`http://192.168.0.146:3004/articles/${articleId}`)
                 .then(response => {
                     this.article = response.data
                     console.log(response.data)

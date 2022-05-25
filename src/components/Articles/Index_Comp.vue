@@ -10,7 +10,7 @@
                     <p>{{ article.excerpt }}</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <router-link :to="'/article/' + article.id">
+                            <router-link :to="'/articles/' + article.id">
                                 <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                             </router-link>
                         </div>
@@ -32,7 +32,7 @@ export default {
         }
     },
     mounted() {
-        axios.get('http://localhost:3004/articles')
+        axios.get('http://192.168.0.146:3004/articles')
             .then(response => {
                 this.articles = response.data;
                 console.log(response.data)
